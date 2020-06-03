@@ -1,0 +1,10 @@
+<%-include("partials/header")-%>
+<div class="container">
+
+
+<h1></h1>
+<%posts.forEach(function(post){%>
+<blockquote class="blockquote text-center"><%=post.title%></blockquote>
+<blockquote   class="blockquote text-right"><%=post.content%></blockquote >
+</div>
+<%-include("partials/footer")-%>

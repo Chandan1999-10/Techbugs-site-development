@@ -9,13 +9,16 @@ app.use(express.static("public"));
 const posts = [];
 
 app.get("/", function(req, res) {
-  res.render('home',{
-  	posts:posts
-
-    });
+  res.render('home');
 })
 app.get("/compose", function(req, res) {
   res.render('compose');
+})
+app.get("/article", function(req, res) {
+  res.render('article',{
+  	posts:posts
+
+    });
 })
 app.post("/compose",function(req,res){
   post={
@@ -23,7 +26,7 @@ app.post("/compose",function(req,res){
     content:req.body.val2,
   }
   posts.push(post);
-  res.redirect("/");
+  res.redirect("/article");
 })
 
 
